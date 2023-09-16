@@ -38,9 +38,9 @@ Aplicação desenvolvida durante o evento <NLW/> IA, onde possibilita realizar u
 
 - [x] Configurar com ESLint + Prettier
 - [x] Tema dark/light
-- [ ] Versão mobile
+- [x] Versão mobile
 - [ ] Testes Front-end/Back-end
-- [ ] PWA (Progressive Web App) 
+- [x] PWA (Progressive Web App) 
 
 # :page_with_curl: Licença
 
