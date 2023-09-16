@@ -1,14 +1,4 @@
-
-<p align="center">
-  <img alt="Rocketseat Education" src="https://avatars.githubusercontent.com/u/69590972?s=200&v=4" width="100px" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=Rocketseat&message=Education&color=8257e5&labelColor=202024" alt="Rocketseat Project" />
-  <a href="LICENSE"><img  src="https://img.shields.io/static/v1?label=License&message=MIT&color=8257e5&labelColor=202024" alt="License"></a>
-</p>
-
-## 💻 Projeto
+# 💻 Projeto
 
 Aplicação desenvolvida durante o evento <NLW/> IA, onde possibilita realizar upload de vídeos e por meio de uma IA, criar automaticamente títulos e descrições com uma boa performance.
 
@@ -38,7 +28,7 @@ Aplicação desenvolvida durante o evento <NLW/> IA, onde possibilita realizar u
 # :clipboard: To Do
 
 - [x] Configurar com ESLint + Prettier
-- [ ] Tema dark
+- [ ] Tema dark/light
 - [ ] Versão mobile
 - [ ] Testes Front-end/Back-end
 - [ ] PWA (Progressive Web App) 
