@@ -44,7 +44,7 @@ export function PromptSelect({ onPromptSelected }: PromptSelectProps) {
 
   return (
     <Select onValueChange={handlePromptSelected}>
-      <SelectTrigger>
+      <SelectTrigger aria-label="Selecione um tipo de prompt listado.">
         <SelectValue placeholder="Selecione um prompt" />
       </SelectTrigger>
       <SelectContent>

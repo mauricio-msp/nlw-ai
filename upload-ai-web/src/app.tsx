@@ -7,8 +7,15 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Separator } from '@/components/ui/separator'
 
+import { ToggleTheme } from '@/components/toggle-theme'
 import { VideoInputForm } from '@/components/video-input-form'
 import { PromptInputForm } from '@/components/prompt-input-form'
+import { AvatarUser } from './components/avatar-user'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from './components/ui/popover'
 
 export function App() {
   const [videoId, setVideoId] = useState<string | null>(null)
@@ -35,11 +42,29 @@ export function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="flex items-center justify-between px-6 py-3 border-b">
-        <h1 className="text-xl font-bold">upload.ai</h1>
+        <h1 className="flex items-center gap-2 text-xl font-extrabold text-transparent bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text">
+          <Popover>
+            <PopoverTrigger>
+              <AvatarUser />
+            </PopoverTrigger>
+            <PopoverContent className="w-fit">
+              <p className="font-medium uppercase">
+                Maurício Porfírio | Front-End Engineer
+              </p>
+              <span className="text-muted-foreground">
+                Web developer. Thirsty for knowledge <br />
+                in new technologies 💻🔥. <br />
+                <Separator className="my-2" />
+                Javascript · Typescript · React · NextJS · NodeJS
+              </span>
+            </PopoverContent>
+          </Popover>
+          upload.ai
+        </h1>
 
         <div className="flex items-center gap-3">
           <span className="text-sm text-muted-foreground">
-            Desenvolvido com 💟 no NLW da Rocketseat
+            Desenvolvido com 💟 no {'<NLW />'} IA da Rocketseat
           </span>
 
           <Separator orientation="vertical" className="h-6" />
@@ -48,6 +73,7 @@ export function App() {
             <Github className="w-4 h-4 mr-2" />
             Github
           </Button>
+          <ToggleTheme />
         </div>
       </header>
 

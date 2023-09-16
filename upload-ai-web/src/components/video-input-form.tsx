@@ -121,7 +121,7 @@ export function VideoInputForm({ onVideoUploaded }: VideoInputFormProps) {
   }, [videoFile])
 
   return (
-    <form className="space-y-6" onSubmit={handleUploadVideo}>
+    <form onSubmit={handleUploadVideo} className="space-y-6">
       <label
         htmlFor="video"
         className="relative flex flex-col items-center justify-center w-full gap-2 text-sm border border-dashed rounded-md cursor-pointer aspect-video text-muted-foreground hover:bg-primary/5"

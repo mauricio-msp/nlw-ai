@@ -31,7 +31,7 @@ export function PromptInputForm({
   isSubmitting,
 }: PromptInputFormProps) {
   return (
-    <form onSubmit={onSubmitForm} className="space-y-6">
+    <form onSubmit={onSubmitForm} className="space-y-4">
       <div className="space-y-2">
         <Label>Prompt</Label>
         <PromptSelect onPromptSelected={onChangeSelectInput} />
@@ -40,7 +40,7 @@ export function PromptInputForm({
       <div className="space-y-2">
         <Label>Modelo</Label>
         <Select disabled defaultValue="gpt3.5">
-          <SelectTrigger>
+          <SelectTrigger aria-label="Selecione um tipo de modelo">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -54,7 +54,7 @@ export function PromptInputForm({
 
       <Separator />
 
-      <div className="space-y-4">
+      <div className="space-y-2">
         <Label>Temperatura</Label>
         <Slider
           min={0}
