@@ -1,3 +1,11 @@
+# Preview projeto
+
+versão dark
+![image](https://github.com/mauricio-msp/nlw-ai-mastery/assets/13602785/62092a7f-b7ff-4292-9d68-b77578fbf1e2)
+
+versão light
+![image](https://github.com/mauricio-msp/nlw-ai-mastery/assets/13602785/aa32414b-4eca-4f57-a5d6-17f4f0c9e919)
+
 # 💻 Projeto
 
 Aplicação desenvolvida durante o evento <NLW/> IA, onde possibilita realizar upload de vídeos e por meio de uma IA, criar automaticamente títulos e descrições com uma boa performance.
@@ -28,7 +36,7 @@ Aplicação desenvolvida durante o evento <NLW/> IA, onde possibilita realizar u
 # :clipboard: To Do
 
 - [x] Configurar com ESLint + Prettier
-- [ ] Tema dark/light
+- [x] Tema dark/light
 - [ ] Versão mobile
 - [ ] Testes Front-end/Back-end
 - [ ] PWA (Progressive Web App) 
