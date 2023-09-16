@@ -1,9 +1,10 @@
-# Preview projeto
+# :dizzy: Preview do projeto
 
-versão dark
+#### Versão dark do projeto
+
 ![image](https://github.com/mauricio-msp/nlw-ai-mastery/assets/13602785/62092a7f-b7ff-4292-9d68-b77578fbf1e2)
 
-versão light
+#### Versão light do projeto
 ![image](https://github.com/mauricio-msp/nlw-ai-mastery/assets/13602785/aa32414b-4eca-4f57-a5d6-17f4f0c9e919)
 
 # 💻 Projeto
