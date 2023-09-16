@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Github } from 'lucide-react'
+import { Github, PanelRight, X } from 'lucide-react'
 import { useCompletion } from 'ai/react'
 
 import { Button } from '@/components/ui/button'
@@ -16,8 +16,17 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from './components/ui/popover'
+import { cn } from './lib/utils'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './components/ui/tooltip'
 
 export function App() {
+  const [isOpenSheetFormPrompt, setIsOpenSheetFormPrompt] =
+    useState<boolean>(true)
   const [videoId, setVideoId] = useState<string | null>(null)
   const [temperature, setTemperature] = useState<number>(0.5)
 
@@ -63,21 +72,58 @@ export function App() {
         </h1>
 
         <div className="flex items-center gap-3">
-          <span className="text-sm text-muted-foreground">
+          <span className="hidden text-sm lg:block text-muted-foreground">
             Desenvolvido com 💟 no {'<NLW />'} IA da Rocketseat
           </span>
 
-          <Separator orientation="vertical" className="h-6" />
+          <Separator orientation="vertical" className="hidden h-6 lg:block" />
 
           <Button variant="outline">
             <Github className="w-4 h-4 mr-2" />
             Github
           </Button>
-          <ToggleTheme />
+
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <ToggleTheme />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>defina um tema</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="block px-3 lg:hidden"
+                  onClick={() => {
+                    setIsOpenSheetFormPrompt(!isOpenSheetFormPrompt)
+                  }}
+                >
+                  {isOpenSheetFormPrompt ? (
+                    <X className="w-4 h-4 transition-all" />
+                  ) : (
+                    <PanelRight className="w-4 h-4 transition-all" />
+                  )}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                {isOpenSheetFormPrompt ? (
+                  <p>Fechar</p>
+                ) : (
+                  <p>Abrir formulário</p>
+                )}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </header>
 
-      <main className="flex flex-1 gap-6 p-6">
+      <main className="relative flex flex-1 gap-6 p-6 overflow-hidden">
         <div className="flex flex-col flex-1 gap-4">
           <section className="grid flex-1 grid-rows-2 gap-4">
             <Textarea
@@ -102,7 +148,15 @@ export function App() {
           </p>
         </div>
 
-        <aside className="space-y-6 w-80">
+        <aside
+          className={cn(
+            'transition-transform space-y-6',
+            'absolute top-0 right-0 h-full px-4 py-12 bg-white dark:bg-zinc-950 border-l-2 shadow-2xl translate-x-96 w-96',
+            'lg:relative lg:translate-x-0 lg:bg-none lg:shadow-none lg:border-none lg:p-0 lg:w-80 lg:h-auto',
+            'data-[visible=true]:translate-x-0',
+          )}
+          data-visible={isOpenSheetFormPrompt}
+        >
           <VideoInputForm onVideoUploaded={setVideoId} />
 
           <Separator />
